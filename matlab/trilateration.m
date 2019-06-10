@@ -1,4 +1,4 @@
-function [ output_args ] = trilateration( A )
+function xy = trilateration( A, r )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
