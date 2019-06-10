@@ -28,6 +28,7 @@ while go
         otherwise
             disp('error');
     end
+    
     pause(.5);
 end
 fclose(s);
