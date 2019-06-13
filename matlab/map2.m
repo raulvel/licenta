@@ -12,30 +12,22 @@ catch err
 end
 
 go = true;
-anad = {};
+
 while go
     % Read buffer data
     data = fscanf(s);
     A = strsplit(data);
     A = A(1:2);
     disp(A);
-    if(isempty(anad))
-        anad = [anad,A(1)];
-    end
-    if(~(ismember(anad,A(1))))
-        anad = [anad,A(1)];
-        if(size(anad,2)<=4)
-            anad = A(1);
-        end
-    end
+    
     switch char(A(1))
-        case anad(1)
+        case 'A1'
             A1 = str2double(A(2));
             disp(A1);
-        case anad(2)
+        case 'A2'
             A2 = str2double(A(2));
             disp(A2);
-        case anad(3)
+        case 'A3'l
             A3 = str2double(A(2));
             disp(A3);
         otherwise
