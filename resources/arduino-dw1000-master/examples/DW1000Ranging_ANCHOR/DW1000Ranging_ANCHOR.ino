@@ -27,7 +27,8 @@ void setup() {
   
   //we start the module as an anchor
   //DW1000Ranging.startAsAnchor("82:17:5B:D5:A9:9A:E2:9C", DW1000.MODE_LONGDATA_RANGE_ACCURACY);
-  DW1000Ranging.startAsAnchor("83:17:5B:D5:A9:9A:E2:9D", DW1000.MODE_LONGDATA_RANGE_ACCURACY);
+  //DW1000Ranging.startAsAnchor("82:17:5B:D5:A9:9A:E2:9D", DW1000.MODE_LONGDATA_RANGE_ACCURACY);
+  DW1000Ranging.startAsAnchor("82:17:5B:D5:A9:9A:E2:9E", DW1000.MODE_LONGDATA_RANGE_ACCURACY);
 }
 
 void loop() {
@@ -35,9 +36,14 @@ void loop() {
 }
 
 void newRange() {
-  Serial.print("from: "); Serial.print(DW1000Ranging.getDistantDevice()->getShortAddress(), HEX);
-  Serial.print("\t Range: "); Serial.print(DW1000Ranging.getDistantDevice()->getRange()); Serial.print(" m");
-  Serial.print("\t RX power: "); Serial.print(DW1000Ranging.getDistantDevice()->getRXPower()); Serial.println(" dBm");
+  //Serial.print("from: "); 
+  Serial.print(DW1000Ranging.getDistantDevice()->getShortAddress(), HEX);
+  //Serial.print("\t Range: "); 
+  Serial.print(DW1000Ranging.getDistantDevice()->getRange()); 
+  //Serial.print(" m");
+  //Serial.print("\t RX power: "); 
+  Serial.print(DW1000Ranging.getDistantDevice()->getRXPower()); 
+  Serial.println("");
 }
 
 void newBlink(DW1000Device* device) {
