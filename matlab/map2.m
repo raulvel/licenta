@@ -1,7 +1,7 @@
 %% the data should be fed here
 % Copyright 2014 The MathWorks, Inc.
 %% Create serial object for Arduino
-s = serial('COM8'); % change the COM Port number as needed
+s = serial('COM4'); % change the COM Port number as needed
 % Connect the serial port to Arduino
 %s.InputBufferSize = 1; % read only one byte every time
 try
@@ -27,7 +27,7 @@ while go
         case 'A2'
             A2 = str2double(A(2));
             disp(A2);
-        case 'A3'l
+        case 'A3'
             A3 = str2double(A(2));
             disp(A3);
         otherwise

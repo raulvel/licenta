@@ -1,7 +1,7 @@
 %% the data should be fed here
 % Copyright 2014 The MathWorks, Inc.
 %% Create serial object for Arduino
-s = serial('COM8'); % change the COM Port number as needed
+s = serial('COM4'); % change the COM Port number as needed
 % Connect the serial port to Arduino
 %s.InputBufferSize = 1; % read only one byte every time
 try
@@ -24,7 +24,7 @@ while go
     end
     if(~(ismember(anad,A(1))))
         anad = [anad,A(1)];
-        if(size(anad,2)<=4)
+        if(size(anad,2)>=4)
             anad = A(1);
         end
     end
@@ -42,6 +42,12 @@ while go
             disp('error');
     end
     
+    if(size(anad,2)==2)
+        plotc([0 0;4.2 0],[A1 A2]);
+    end
+    if(size(anad,2)==3)
+        plotc([0 0;4.2 0;1 1],[A1 A2 A3]);%TODO change A3 coords
+    end
     pause(.5);
 end
 fclose(s);
