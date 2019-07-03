@@ -13,6 +13,9 @@ end
 
 go = true;
 anad = {};
+a1 = [];
+a2 = [];
+a3 = [];
 while go
     % Read buffer data
     data = fscanf(s);
@@ -31,12 +34,39 @@ while go
     switch char(A(1))
         case anad(1)
             A1 = str2double(A(2));
+            %filter
+            if (size(a1,2)<5)
+                a1 = [a1, A1];
+            else 
+                a1 = a1(2:end);
+                a1 = [a1, A1];
+            end
+            A1 = mean(a1);
+            %/filter
             disp(A1);
         case anad(2)
             A2 = str2double(A(2));
+            %filter
+            if (size(a2,2)<5)
+                a2 = [a2, A2];
+            else 
+                a2 = a2(2:end);
+                a2 = [a2, A2];
+            end
+            A2 = mean(a2);
+            %/filter
             disp(A2);
         case anad(3)
             A3 = str2double(A(2));
+            %filter
+            if (size(a3,2)<5)
+                a3 = [a3, A3];
+            else 
+                a3 = a3(2:end);
+                a3 = [a3, A3];
+            end
+            A3 = mean(a3);
+            %/filter
             disp(A3);
         otherwise
             disp('error');
