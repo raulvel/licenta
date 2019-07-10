@@ -44,7 +44,7 @@ while go
                 a1 = a1(2:end);
                 a1 = [a1, A1];
             end
-            %A1 = mean(a1);
+            A1 = mean(a1);
             A1 = A1 - er1;
             %/filter
             disp(A1);
@@ -57,7 +57,7 @@ while go
                 a2 = a2(2:end);
                 a2 = [a2, A2];
             end
-            %A2 = mean(a2);
+            A2 = mean(a2);
             A2 = A2 - er2;
             %/filter
             disp(A2);
@@ -70,7 +70,7 @@ while go
                 a3 = a3(2:end);
                 a3 = [a3, A3];
             end
-            %A3 = mean(a3);
+            A3 = mean(a3);
             A3 = A3 - er3;
             %/filter
             disp(A3);
@@ -79,10 +79,10 @@ while go
     end
     
     if(size(anad,2)==2)
-        plotc([0 0;4.2 0],[A1 A2]);
+        plott([0 0;4.2 0],[A1 A2]);
     end
     if(size(anad,2)==3)
-        plotc([0 0;3.5 0;0 1.6],[A1 A2 A3]);%TODO change A3 coords
+        plott([0 0;3.5 0;0 1.6],[A1 A2 A3]);%TODO change A3 coords
     end
     pause(.5);
 end

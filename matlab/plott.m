@@ -1,9 +1,8 @@
-function plotc( A, r )
+function plott( A, r )
 %plotc - plots circles with centers A and radii r
 %   Detailed explanation goes here
 
-clf;
-viscircles(A,r);
+
 
 %calculate the intersection of 2 circles -> 2 points
 d = norm(A(2,:)-A(1,:));
@@ -26,7 +25,7 @@ if (size(A,1)>=3)
     du = abs(sqrt((pu(1)-A(3,1))^2 + (pu(2)-A(3,2))^2)-r(3));
     dd = abs(sqrt((pd(1)-A(3,1))^2 + (pd(2)-A(3,2))^2)-r(3));
 end
-hold;
+
 if (d<r(1)+r(2))
     if (size(A,1)==2)
         plot(pd(1),pd(2),'o');
@@ -41,4 +40,3 @@ if (d<r(1)+r(2))
     end
 end
 end
-
