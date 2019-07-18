@@ -19,7 +19,16 @@ a2 = [];
 er2 = 0.5;
 a3 = [];
 er3 = 0.4;
+br = 0;
+tic;
+tim = 0;
 while go
+    if(br>=1)
+        flushinput(s);
+        br = 0;
+    else
+        br = br + 1;
+    end
     % Read buffer data
     data = fscanf(s);
     A = strsplit(data);
@@ -78,12 +87,15 @@ while go
             disp('error');
     end
     
-    if(size(anad,2)==2)
-        plott([0 0;4.2 0],[A1 A2]);
-    end
+%     if(size(anad,2)==2)
+%         plott([0 0;4.2 0],[A1 A2]);
+%     end
+    %if((toc-tim)>0.5)
     if(size(anad,2)==3)
         plott([0 0;3.5 0;0 1.6],[A1 A2 A3]);%TODO change A3 coords
     end
+    %tim = toc;
+    %end
     pause(.5);
 end
 fclose(s);
